@@ -6,7 +6,8 @@ from .forms import *
 def index(request):
 
     return render(request, 'index.html')
-
+    
+@login_required(login_url='/accounts/login/')
 def profile(request):
     current_user = request.user
     profile = Profile.objects.filter(username=request.user).first()

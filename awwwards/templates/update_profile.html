@@ -33,7 +33,7 @@
         <div class="card card-3">
             <div class="card-heading"></div>
             <div class="card-body">
-                <h2 class="title">Registration Info</h2>
+                <h2 class="title">Update Profile</h2>
                 <form  action="{% url 'update' %}" method="post" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% bootstrap_form form %}
