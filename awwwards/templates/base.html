@@ -38,6 +38,7 @@
             <nav class="main-menu">
                 <ul>
                     <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'update' %}"> Update Profile</a></li>
                     <li><a href="{% url 'profile' %}">Profile</a></li>
                 </ul>
             </nav>
@@ -49,22 +50,6 @@
 
         {% endblock%}
         <!-- End content section -->
-
-        <!-- Footer section start -->
-        <footer class="footer-section spad">
-            <div class="container text-center">
-                <h2>Let’s work together!</h2>
-                <p>office@template.com</p>
-                <div class="social">
-                    <a href="#"><i class="fa fa-pinterest"></i></a>
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-dribbble"></i></a>
-                </div>
-            </div>
-        </footer>
-        <!-- Footer section end -->
-
 
         <!--====== Javascripts & Jquery ======-->
         <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
