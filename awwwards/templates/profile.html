@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content%}
+
+        <!-- Header section start -->
+        <section class="hero-section">
+            <div class="hero-slider owl-carousel">
+                <div class="hs-item set-bg sp-pad" data-setbg="{% static 'img/hero-slider/1.jpg' %}">
+                    <div class="hs-text">
+                        <h2 class="hs-title">Hey {{user.username}}</h2>
+                        <p class="hs-des">{{user.profile.bio}}</p>
+                    </div>
+                </div>
+                <div class="hs-item set-bg sp-pad" data-setbg="{% static 'img/hero-slider/2.jpg' %}">
+                    <div class="hs-text">
+                 <h2 class="hs-title">Hey {{user.username}}</h2>
+                        <p class="hs-des">{{user.profile.bio}}</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+{%endblock%}
