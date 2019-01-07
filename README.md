@@ -1,4 +1,4 @@
-# Personal-Gallery
+# Awwwards
 ## Description
 This application allows users to post projects and other projects by their peers 
 ## Link to Deployed site
