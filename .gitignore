@@ -2,4 +2,4 @@
 virtual/
 get-pip.py
 psql_history
-
+.env

@@ -11,8 +11,8 @@ urlpatterns=[
     url(r'^search/', views.search, name='search'),
     url(r'^project/(\d+)',views.project,name='project'),
 
-    url(r'^api/profiles/$', views.ProfileList.as_view()),
-    url(r'^api/projects/$', views.ProjectList.as_view()),
+    url(r'^api/profiles/$', views.ProfileList.as_view(), name='api'),
+    url(r'^api/projects/$', views.ProjectList.as_view(), name='api1'),
 ]
 
 if settings.DEBUG:

@@ -1,0 +1,1 @@
+web: gunicorn AWWARDS-IP9.wsgi
