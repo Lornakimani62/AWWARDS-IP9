@@ -1,36 +1,27 @@
-{% extends "registration/base.html" %}
-{%load bootstrap4%}
-{%block content%}
-<div class="container">
-    <div class="row">
-        <div class="col-sm-4 col-md-4 col-lg-4">
-            {% if form.errors %}
-                <p> You may have provided some incorrect information </p>
-            {% endif %}
-            <div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
-                    <div class="wrapper wrapper--w780">
-                        <div class="card card-3">
-                            <div class="card-heading"></div>
-                            <div class="card-body">
-                                <h2 class="title">Registration Info</h2>
-                                <form  action="/accounts/register/" method="post">
-                                    {% csrf_token %}
-                                    {% bootstrap_form form %}
-                                    <div class="form-group">
-                                      <input type="submit" class="btn" value="Sign Up">
-                                    </div>
-
-                                    <input type="hidden" name="next" value="{{next}}">
-
-                                </form>
-                                <a href="/accounts/login">Already have an account ? Login</a>
-                            </div>
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+            <div class="card text-center">
+                    <div class="card-body">
+                      <h5 class="card-title">Update Profile</h5>
+                   
+                        <hr>
+                        <form class="accounts/register" action="" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {% bootstrap_form form %}
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary" value="Register">
                         </div>
-                    </div>
+                     </form>
+                     Already have an account? <a href="/accounts/login">Log In Here</a>
+                </div>
             </div>
-        </div>
-            <!-- empty div -->
-        <div class="col-md-4"></div>
     </div>
+    <div class="col-md-2"></div>
+  </div>
 </div>
 {% endblock %}

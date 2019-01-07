@@ -27,7 +27,6 @@
 
         <!-- Navbar section start -->
         <header class="header-section sp-pad">
-            <h3 class="site-logo">Awwwards</h3>
             <form class="search-top" action="{% url 'search'%}">
                 <button class="se-btn"><i class="fa fa-search"></i></button>
                 <input type="text" placeholder="Search.....">
@@ -41,6 +40,8 @@
                     <li><a href="{% url 'profile' %}">Profile</a></li>
                     <li><a href="{% url 'update' %}"> Update Profile</a></li>
                     <li><a href="{% url 'new_project' %}"> Submit Project</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                    <li><a href="accounts/login">Login/Register</a></li>
                 </ul>
             </nav>
         </header>
