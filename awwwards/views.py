@@ -49,17 +49,33 @@ def update_profile(request):
 @login_required(login_url='/accounts/login/')
 def post_project(request):
     current_user = request.user
-
-    # Allows users to submit new projects
+    
     if request.method =='POST':
-        form=ProjectForm(request.POST,instance=profile,files=request.FILES)
-        project.save()
-        return redirect(reverse('index'))
+        form = ProjectForm(request.POST,request.FILES)
+        if form.is_valid():
+            project = form.save(commit=False)
+            project.username = current_user
+            project.save()
+        return redirect('home')
+    else:
+        form = ProjectForm()
+
+    return render(request,'post_project.html',{"form":form})
+
+
+
+@login_required(login_url='/accounts/login/')
+def search(request):
+    current_user = request.user
+    if 'project' in request.GET and request.GET["project"]:
+        search_term = request.GET.get("project")
+        searched_projects = Project.find_project(search_term)
+        message=f"{search_term}"
+
+
+        return render(request,'search.html',{"message":message,"projects":searched_projects,"profile":profile})
 
     else:
-        form=ProjectForm()
-    
-    return render(request,'post_project.html',{'form':form})
+        message="You haven't searched for any term"
+        return render(request,'search.html',{"message":message})
 
-
-    

@@ -7,7 +7,7 @@ from url_or_relative_url_field.fields import URLOrRelativeURLField
 class Profile(models.Model):
     '''A class to allow users to update and view their profile
         '''
-    avatar = models.ImageField(upload_to='avatars/')
+    avatar = models.ImageField(upload_to='media/')
     description = HTMLField()
     username = models.ForeignKey(User,on_delete=models.CASCADE)
     email = models.EmailField()
@@ -29,7 +29,7 @@ class Project(models.Model):
     
     title = models.CharField(max_length=20)
     description = HTMLField()
-    image = models.ImageField(upload_to='avatars/')
+    image = models.ImageField(upload_to='media/')
     link = URLOrRelativeURLField()
     username =  username = models.ForeignKey(User,on_delete=models.CASCADE)
     design = models.IntegerField(choices=list(zip(range(0, 11), range(0, 11))), default=0)
@@ -44,5 +44,10 @@ class Project(models.Model):
     def delete_project(self):
         self.delete()
 
+    @classmethod
+    def find_project(cls, search_term):
+        projects = cls.objects.filter(project__title__icontains=search_term)
+        return projects
+
     def __str__(self):
-        return self.project_title
+        return self.title
