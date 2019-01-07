@@ -1,6 +1,6 @@
 # Awwwards
 ## Description
-This application allows users to post projects and other projects by their peers 
+This application allows users to post projects to be rated by their peers 
 ## Link to Deployed site
 Here is the a link to the application
 
