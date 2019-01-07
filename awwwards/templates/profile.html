@@ -9,8 +9,9 @@
                 <div class="hs-item set-bg sp-pad" data-setbg="{% static 'img/hero-slider/1.jpg' %}">
                     <div class="hs-text">
                         <h2 class="hs-title"><i id="avatar" class=" center-align fa fa-user-circle" img src="{{profile.avatar}}"></i> {{user.username}}</h2>
-                        <p class="hs-des">{{profile.email}}</p>
-                        <p class="hs-des">{{profile.description}}</p>
+                        <p class="hs-des">Contact: {{profile.email}}</p>
+                        <p class="hs-des">Bio: {{profile.description}}</p>
+                        <p class="hs-des">Projects: {{profile.project.title}}</p>
                     </div>
                 </div>
         </section>
