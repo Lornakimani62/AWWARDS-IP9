@@ -4,6 +4,9 @@ from .models import *
 from .forms import *
 from django.urls import reverse
 from django.db.models import Max,F
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from .serializer import ProfileSerializer,ProjectSerializer
 
 def index(request):
     projects = Project.objects.all() # retrieves  projects from the database
@@ -104,3 +107,15 @@ def project(request,project_id):
     else:
         form = VoteForm()
     return render(request,'project.html',{'form':form,'project':project,'rating':rating})
+
+class ProfileList(APIView):
+    def get(self, request, format=None):
+        all_profiles = Profile.objects.all()
+        serializers = ProfileSerializer(all_profiles, many=True)
+        return Response(serializers.data)
+
+class ProjectList(APIView):
+    def get(self, request, format=None):
+        all_projects = Project.objects.all()
+        serializers = ProjectSerializer(all_projects, many=True)
+        return Response(serializers.data)
