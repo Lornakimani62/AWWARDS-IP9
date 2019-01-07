@@ -79,7 +79,7 @@
             <div class="clearfix">
     
           <strong><p>{{project.title}}</p></strong>
-          <a href=""> <img src="{{project.image.url}}" class="img-responsive" alt="Image"></a>
+          <a href="{% url 'project' project.pk %}"> <img src="{{project.image.url}}" class="img-responsive" alt="Image"></a>
           <p>{{project.description}}</p>
           <p><a href="{{project.link}}">View on live site</a></p>
         </div>
