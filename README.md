@@ -2,7 +2,7 @@
 ## Description
 This application allows users to post projects to be rated by their peers 
 ## Link to Deployed site
-Here is the a link to the application
+Here is the a link to the application[link] (https://lornakimani62awwards.herokuapp.com)
 
 # Setup and installations
 ## Prerequisites
